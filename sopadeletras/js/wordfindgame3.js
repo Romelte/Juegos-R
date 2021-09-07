@@ -92,9 +92,7 @@ var llave;
             if(r.length === 0 && t(".puzzleSquare").addClass("complete")){
               
               alert("Felicidades Has Ganado el primer nivel");
-              document.getElementById('sig').disabled=false;
-              document.getElementById('sig').style.display = 'block';
-              llave = 4;
+              llave = 3;
               var data_nivel = 'llave=' + llave;
               
               $.ajax({
@@ -162,6 +160,5 @@ var llave;
     };
   };
   window.wordfindgame = r();
-    document.getElementById('sig').disabled=true;
-    document.getElementById('sig').style.display = 'none';
+    
 })(document, jQuery, wordfind);
