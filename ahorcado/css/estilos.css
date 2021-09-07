@@ -1,0 +1,297 @@
+
+
+body {
+    background-image: url(../images/bg-bosque2.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+#col2{
+	width: 50%;
+	float: left;
+}
+
+#pista {
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 41px;
+    color: #416482;
+    font-family: 'Poppins', sans-serif;
+}
+
+#general,
+#sopa{
+    width: 100%;
+    display: table;
+    margin-top: -9px;
+}
+
+#bg-letras {
+    background: rgba(255,255,255,1.00);
+    width: 350px;
+    height: 290px;
+    padding-top: 0px;
+    margin-top: 30px;
+}
+
+#container{
+	width: 1140px;
+	margin: 0 auto;
+}
+
+#cabezote{
+    width: 100%;
+    display: table;
+	
+}
+
+#menu{
+    float: left;
+    margin-top: 22px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 0;
+}
+
+#menu{
+    width: 3%;
+    float: left;
+}
+
+#logo-libro{
+    float: left;
+    width: 25%;
+}
+
+#logo-libro img{
+    width: 200px;
+    float: right;
+    margin-top: 10px;
+}
+
+#contador{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15pt;
+    text-align: center;
+    color: #575757;
+    margin-top: 48px;
+    margin-right: 12px;
+    margin-left: 66px;
+    margin-bottom: 12px;
+}
+
+#titulo {
+    width: 50%;
+	float: left;
+}
+
+#titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38pt;
+    text-align: center;
+    color: #416482;
+    margin-left: 51px;
+    font-weight: bold;
+    text-shadow: 0 0;
+    padding-top: 19px;
+}
+
+
+
+.nina-animada{
+    width: 723px;
+    align-content: center;
+	
+}
+
+.nina-animada3{
+    width: 723px;
+    align-content: center;
+    margin-top: -248px;
+}
+
+#puzzle-container {
+    border: 0px solid black;
+    padding: 20px 20px 0 20px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    width: 350px;
+    height: 350px;
+    float: left;
+    background-color: rgba(255,255,255,1.00);
+}
+
+#puzzle-container div {
+    margin: 0 auto;
+}
+/* estilo para cada cuadrado del rompecabezas */
+
+#puzzle-container .puzzleSquare {
+	height: 30px;
+	width: 30px;
+	text-transform: uppercase;
+	background-color: white;
+	border: 0;
+	font: 1em sans-serif;
+}
+
+#puzzle-container button::-moz-focus-inner {
+    border: 0;
+}
+/* indica cuando se ha seleccionado un cuadrado */
+
+#puzzle-container .selected {
+    background-color: orange;
+}
+/* indica que el cuadrado es parte de una palabra que se ha encontrado */
+
+#puzzle-container .found {
+    background-color: #b0261e;
+    color: white;
+}
+
+#puzzle-container .solved {
+    background-color: #d59d26;
+    color: white;
+}
+/* indica que se han encontrado todas las palabras */
+
+#puzzle-container .complete {
+    background-color: green;
+}
+
+/* estilos cuadro de sopa nivel2 */
+#puzzle-container.nivel2 {
+    width: 400px;
+    height: 400px;
+}
+
+/* estilos cuadro de sopa nivel3 */
+#puzzle-container.nivel3 {
+    width: 400px;
+    height: 415px;
+}
+
+/* estilos del cuadro de descripcion*/
+
+.descripcion1 {
+    padding-top: 15px;
+    width: 451px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 15px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #D17263;
+    padding-bottom: 15px;
+    border-radius: 25px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.descripcion2 {
+    padding-top: 15px;
+    width: 451px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 15px;
+    margin-right: 50px;
+    margin-top: 18px;
+    margin-bottom: auto;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #545455;
+    padding-bottom: 15px;
+    border-radius: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.descripcion3 {
+    padding-top: 15px;
+    width: 451px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 15px;
+    margin-right: 50px;
+    margin-top: 35px;
+    margin-bottom: auto;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #545455;
+    padding-bottom: 15px;
+    border-radius: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/**
+* Estilos para la lista de palabras
+*/
+
+#puzzle-words {
+    padding-top: 9px;
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+    width: 451px;
+    padding-left: 0px;
+    padding-right: 40px;
+    margin-left: 15px;
+    margin-right: 50px;
+    margin-top: 6px;
+    margin-bottom: auto;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #416482;
+    padding-bottom: 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+#puzzle-words ul {
+    list-style-type: none;
+	margin: 0;
+}
+
+#puzzle-words li {
+    padding-top: 0px;
+    padding-right: 0;
+    padding-left: 0;
+}
+/*indica que la palabra ha sido encontrada */
+
+#puzzle-words .wordFound {
+    text-decoration: line-through;
+    color: #FFFFFF;
+}
+/**
+*  Estilos para el botón
+*/
+
+#boton{
+	margin: 15px 0;
+	width: 380px;
+}
+
+#solve {
+    margin: 0 30px;
+}
+
+#solveBTN {
+    align-content: center;
+}

@@ -1,0 +1,17 @@
+
+.col-sm.Nivel {
+  margin: 40px;
+  border: 5px solid black;
+  background-color: gray;
+  padding: 50px;
+}
+
+.col-sm.Nivel h2 {
+    text-align: center;
+    cursor: pointer;
+}
+
+.col-sm.Nivel h2 a {
+    text-decoration: none;
+    color: black;
+}
