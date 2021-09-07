@@ -95,8 +95,18 @@ var llave;
               document.getElementById('sig').disabled=false;
               document.getElementById('sig').style.display = 'block';
               llave = 1;
-              window.location.href = "index.php?nivel=" + llave;
-              //window.location.href = "index2.php";
+              var data_nivel = 'llave=' + llave;
+              
+              $.ajax({
+                type: "POST",
+                url: "../guardar-nivel.php",
+                data: data_nivel,
+                dataType:"html",
+                asycn:false,
+                success: function(){
+                   alert("Ha sido ejecutada la acción.");
+                }
+        }).responseText;
               
             }
             

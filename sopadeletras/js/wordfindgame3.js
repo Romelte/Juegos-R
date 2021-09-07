@@ -90,14 +90,25 @@ var llave;
             t("." + i).addClass("wordFound")),
             0 === r.length && t(".puzzleSquare").addClass("complete");
             if(r.length === 0 && t(".puzzleSquare").addClass("complete")){
+              
               alert("Felicidades Has Ganado el primer nivel");
               document.getElementById('sig').disabled=false;
               document.getElementById('sig').style.display = 'block';
-              llave = 3;
-              window.location.href = "index.php?nivel=" + llave;
+              llave = 4;
+              var data_nivel = 'llave=' + llave;
+              
+              $.ajax({
+                type: "POST",
+                url: "../guardar-nivel.php",
+                data: data_nivel,
+                dataType:"html",
+                asycn:false,
+                success: function(){
+                   alert("Ha sido ejecutada la acción.");
+                }
+        }).responseText;
+              
             }
-            
-
         t(".selected").removeClass("selected"),
           (o = null),
           (s = []),

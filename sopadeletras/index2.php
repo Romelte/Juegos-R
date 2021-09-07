@@ -32,7 +32,7 @@ if ($conn ->connect_error) {
      
     
 
-    if($numero === '1'){
+    if($numero === '0'){
        header('Location: ./index2.php');
     }
     
@@ -95,7 +95,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 		<div align="center" class="descripcion2">Encuentra las palabras listadas, que tienen relación con nuestro capítulo "La niña que creció luchando por los niños".</div>
         <div align="center" class="palabras" id="puzzle-words"></div>
         <div align="center" id="boton">
-        <button onclick="window.location.href='index2.php' "class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig" >Siguiente</button>			
+        <button onclick="window.location.href='index3.php' "class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig" >Siguiente</button>			
 			<!--<input type="button" class="pushy__btn pushy__btn--md pushy__btn--green" id="solveBTN" value="Resolver" align="middle"/> -->
 			<p></p>
 			<button  class="pushy__btn pushy__btn--md pushy__btn--red" >Salir</button>
@@ -131,43 +131,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
                 console.log(result);
             });
         </script>
-         <?php
-     
-
-     if (isset ($_GET['nivel'])){
-         $nivel = $_GET['nivel'];
-
-     if($nivel == 2){
-        // Datos para conectar a la base de datos.
-        $nombreServidor = "localhost";
-        $nombreUsuario = "root";
-        $passwordBaseDeDatos = "";
-        $nombreBaseDeDatos = "fundacion";
-        $usuariosopa= $_SESSION['correo'];
-
-       // Crear conexión con la base de datos.
-      $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
-
-     // Validar la conexión de base de datos.
-      if ($conn ->connect_error) {
-      die("Connection failed: " . $conn ->connect_error);
-      }
-      
-      $sql = "UPDATE wp_users SET user_sopa='2' WHERE user_login='$usuariosopa'"; 
-
-      if ($conn->query($sql) === TRUE) {
-          echo "guardado";
-        } else {
-          echo "Error  " . $conn->error;
-        }
-        
-        $conn->close();
-
-
-     }            
-     
-     }  
-  ?>
+         
     </body>
 </html>
 

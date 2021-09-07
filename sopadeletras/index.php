@@ -138,43 +138,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
             
 
         </script>
-     <?php
-       
-
-        if (isset ($_GET['nivel'])){
-            $nivel = $_GET['nivel'];
-
-        if($nivel == 1){
-           // Datos para conectar a la base de datos.
-           $nombreServidor = "localhost";
-           $nombreUsuario = "root";
-           $passwordBaseDeDatos = "";
-           $nombreBaseDeDatos = "fundacion";
-           $usuariosopa= $_SESSION['correo'];
-
-          // Crear conexión con la base de datos.
-         $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
-
-        // Validar la conexión de base de datos.
-         if ($conn ->connect_error) {
-         die("Connection failed: " . $conn ->connect_error);
-         }
-         
-         $sql = "UPDATE wp_users SET user_sopa='1' WHERE user_login='$usuariosopa'"; 
-
-         if ($conn->query($sql) === TRUE) {
-             echo "guardado";
-           } else {
-             echo "Error  " . $conn->error;
-           }
-           
-           $conn->close();
-
-
-        }            
-        
-        }  
-     ?>
+     
 
     </body>
 </html>
