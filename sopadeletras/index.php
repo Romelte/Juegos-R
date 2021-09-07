@@ -99,7 +99,8 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
                  
     
             });
-
+            
+            
             
         </script>
     </body>

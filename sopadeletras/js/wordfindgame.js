@@ -88,6 +88,9 @@
             r.splice(e, 1),
             t("." + i).addClass("wordFound")),
             0 === r.length && t(".puzzleSquare").addClass("complete");
+            if(r.length === 0 && t(".puzzleSquare").addClass("complete")){
+              alert("hola");
+          }
         t(".selected").removeClass("selected"),
           (o = null),
           (s = []),
