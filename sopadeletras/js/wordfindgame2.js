@@ -90,14 +90,11 @@ var llave;
             t("." + i).addClass("wordFound")),
             0 === r.length && t(".puzzleSquare").addClass("complete");
             if(r.length === 0 && t(".puzzleSquare").addClass("complete")){
-              
               alert("Felicidades Has Ganado el primer nivel");
               document.getElementById('sig').disabled=false;
               document.getElementById('sig').style.display = 'block';
-              llave = 1;
+              llave = 2;
               window.location.href = "index.php?nivel=" + llave;
-              //window.location.href = "index2.php";
-              
             }
             
 
@@ -107,7 +104,6 @@ var llave;
           (i = ""),
           (a = null);
       },
-      
       p = function (e, t, r, o) {
         for (var a in n.orientations) {
           var l = n.orientations[a],
@@ -155,9 +151,6 @@ var llave;
     };
   };
   window.wordfindgame = r();
-  
     document.getElementById('sig').disabled=true;
     document.getElementById('sig').style.display = 'none';
-    
-    
 })(document, jQuery, wordfind);

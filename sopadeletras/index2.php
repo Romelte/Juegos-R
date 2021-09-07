@@ -6,7 +6,41 @@
  //Si existe la sesión "cliente"..., la guardamos en una variable.
  if (isset($_SESSION['correo'])){
      $cliente = $_SESSION['correo'];
+     $nombreServidor = "localhost";
+     $nombreUsuario = "root";
+     $passwordBaseDeDatos = "";
+     $nombreBaseDeDatos = "fundacion";
+     
 
+    // Crear conexión con la base de datos.
+   $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
+// Validar la conexión de base de datos.
+if ($conn ->connect_error) {
+    die("Connection failed: " . $conn ->connect_error);
+    }
+    
+    $consulta = "SELECT user_sopa FROM wp_users WHERE user_login='$cliente'";
+    $result =  $conn->query($consulta);
+
+    $numero = 0;
+   
+    if($result){
+        $fila = $result->fetch_assoc();
+        $numero2 = array_values($fila);
+        $numero = $numero2[0];
+    }
+     
+    
+
+    if($numero === '1'){
+       header('Location: ./index2.php');
+    }
+    
+    if($numero === '3'){
+       header('Location: ./index3.php');
+    }
+
+    $conn->close();
 
  }else{
 header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
@@ -61,10 +95,10 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 		<div align="center" class="descripcion2">Encuentra las palabras listadas, que tienen relación con nuestro capítulo "La niña que creció luchando por los niños".</div>
         <div align="center" class="palabras" id="puzzle-words"></div>
         <div align="center" id="boton">
-			<button onclick="window.location.href='index3.php'" class="pushy__btn pushy__btn--md pushy__btn--blue">Siguiente</button>			
-			<input type="button" class="pushy__btn pushy__btn--md pushy__btn--green" id="solveBTN" value="Resolver" align="middle"/>
+        <button onclick="window.location.href='index2.php' "class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig" >Siguiente</button>			
+			<!--<input type="button" class="pushy__btn pushy__btn--md pushy__btn--green" id="solveBTN" value="Resolver" align="middle"/> -->
 			<p></p>
-			<button class="pushy__btn pushy__btn--md pushy__btn--red">Salir</button>
+			<button  class="pushy__btn pushy__btn--md pushy__btn--red" >Salir</button>
 			</div>
 			</div>
 			
@@ -81,13 +115,11 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <!-- dependencias -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
         <script src="js/wordfind.js"></script>
-        <script src="js/wordfindgame.js"></script>
+        <script src="js/wordfindgame2.js"></script>
         <!--logica -->
         <script>
             // palabras a usar
-            var words = ['colombia', 'españa', 'francia', 'china', 'siria', 'africa',
-               'magdalena', 'peru', 'universidad', 'venezuela', 'aniversario',
-               'respiracion'
+            var words = ['colombia'
            ];
 
             //  !
@@ -99,6 +131,43 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
                 console.log(result);
             });
         </script>
+         <?php
+     
+
+     if (isset ($_GET['nivel'])){
+         $nivel = $_GET['nivel'];
+
+     if($nivel == 2){
+        // Datos para conectar a la base de datos.
+        $nombreServidor = "localhost";
+        $nombreUsuario = "root";
+        $passwordBaseDeDatos = "";
+        $nombreBaseDeDatos = "fundacion";
+        $usuariosopa= $_SESSION['correo'];
+
+       // Crear conexión con la base de datos.
+      $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
+
+     // Validar la conexión de base de datos.
+      if ($conn ->connect_error) {
+      die("Connection failed: " . $conn ->connect_error);
+      }
+      
+      $sql = "UPDATE wp_users SET user_sopa='2' WHERE user_login='$usuariosopa'"; 
+
+      if ($conn->query($sql) === TRUE) {
+          echo "guardado";
+        } else {
+          echo "Error  " . $conn->error;
+        }
+        
+        $conn->close();
+
+
+     }            
+     
+     }  
+  ?>
     </body>
 </html>
 
