@@ -6,7 +6,6 @@
  //Si existe la sesión "cliente"..., la guardamos en una variable.
  if (isset($_SESSION['correo'])){
      $cliente = $_SESSION['correo'];
-     $puntos = (int)"SELECT user_status FROM wp_puntos WHERE user_email='$cliente'  ";
 
 
  }else{
@@ -26,7 +25,6 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
             //Si existe la sesión "correo"...
             if(isset($_SESSION['correo'])){
                 echo "<p class='negrita'>Bienvenido ".$cliente."&nbsp;&nbsp;";
-                echo "<p class='negrita'>Tus puntos Son ".$puntos."&nbsp;&nbsp;";
                 echo "<a href='../index.php?salir=1'>Salir</a></p>";
                 //Si existe y hemos pulsado el link "Salir"...
                 if(isset($_REQUEST["salir"])){
@@ -120,11 +118,6 @@ $(document).ready(function(){
             //miro si ha ganado
             if(estanTodas(aciertos,palabraEscogida)){
                var caja = $('<div class="dialogletra" title="Has Ganado!!">Felicidades! has adivinado la palabra!!</div>');
-               <?php
-                  $gano = 200;
-                  $cliente = $_SESSION['correo'];
-                  $sql =  "INSERT INTO wp_users WHERE user_login = '$cliente' (user_points) VALUES ('$gano')"  ;
-               ?>
                caja.dialog({
                modal: true,
                width: 600,
