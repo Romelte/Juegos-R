@@ -94,7 +94,7 @@ var llave;
               alert("Felicidades Has Ganado el primer nivel");
               document.getElementById('sig').disabled=false;
               document.getElementById('sig').style.display = 'block';
-              llave = 1;
+              llave = 2;
               var data_nivel = 'llave=' + llave;
               
               $.ajax({
@@ -109,7 +109,6 @@ var llave;
         }).responseText;
               
             }
-            
 
         t(".selected").removeClass("selected"),
           (o = null),
@@ -117,7 +116,6 @@ var llave;
           (i = ""),
           (a = null);
       },
-      
       p = function (e, t, r, o) {
         for (var a in n.orientations) {
           var l = n.orientations[a],
@@ -165,9 +163,6 @@ var llave;
     };
   };
   window.wordfindgame = r();
-  
     document.getElementById('sig').disabled=true;
     document.getElementById('sig').style.display = 'none';
-    
-    
 })(document, jQuery, wordfind);

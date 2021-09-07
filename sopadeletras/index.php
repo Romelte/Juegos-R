@@ -1,3 +1,4 @@
+
 <?php
  
  header('Content-Type: text/html; charset=UTF-8');
@@ -6,7 +7,42 @@
  //Si existe la sesión "cliente"..., la guardamos en una variable.
  if (isset($_SESSION['correo'])){
      $cliente = $_SESSION['correo'];
-     $puntos = (int)"SELECT user_points FROM wp_puntos WHERE user_email='$cliente'  ";
+           $nombreServidor = "localhost";
+           $nombreUsuario = "root";
+           $passwordBaseDeDatos = "";
+           $nombreBaseDeDatos = "fundacion";
+           
+
+          // Crear conexión con la base de datos.
+         $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
+
+        // Validar la conexión de base de datos.
+         if ($conn ->connect_error) {
+         die("Connection failed: " . $conn ->connect_error);
+         }
+         
+         $consulta = "SELECT user_sopa FROM wp_users WHERE user_login='$cliente'";
+         $result =  $conn->query($consulta);
+
+         $numero = 0;
+        
+         if($result){
+             $fila = $result->fetch_assoc();
+             $numero2 = array_values($fila);
+             $numero = $numero2[0];
+         }
+          
+         
+
+         if($numero === '2'){
+            header('Location: ./index2.php');
+         }
+         
+         if($numero === '3'){
+            header('Location: ./index3.php');
+         }
+        
+         $conn->close();
 
 
  }else{
@@ -32,7 +68,6 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
             //Si existe la sesión "correo"...
             if(isset($_SESSION['correo'])){
                 echo "<p class='negrita'>Bienvenido ".$cliente."&nbsp;&nbsp;";
-                echo "<p class='negrita'>Tus puntos Son ".$puntos."&nbsp;&nbsp;";
                 echo "<a href='../index.php?salir=1'>Salir</a></p>";
                 //Si existe y hemos pulsado el link "Salir"...
                 if(isset($_REQUEST["salir"])){
@@ -62,8 +97,8 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 		<div align="center" class="descripcion1">Encuentra las palabras listadas, que tienen relación con nuestro capítulo "La niña que creció luchando por los niños".</div>
         <div align="center" class="palabras" id="puzzle-words"></div>
         <div align="center" id="boton">
-			<button onclick="window.location.href='index2.php' "class="pushy__btn pushy__btn--md pushy__btn--blue">Siguiente</button>			
-			<input type="button" class="pushy__btn pushy__btn--md pushy__btn--green" id="solveBTN" value="Resolver" align="middle"/>
+			<button onclick="window.location.href='index2.php' "class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig" >Siguiente</button>			
+			<!--<input type="button" class="pushy__btn pushy__btn--md pushy__btn--green" id="solveBTN" value="Resolver" align="middle"/> -->
 			<p></p>
 			<button class="pushy__btn pushy__btn--md pushy__btn--red">Salir</button>
 			</div>
@@ -86,8 +121,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <!--logica -->
         <script>
             // palabras a usar
-            var words = ['colombia', 'españa', 'francia', 'china', 'siria', 'africa',
-               'respiracion'
+            var words = ['colombia'
            ];
 
             //  !
@@ -101,9 +135,11 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
                  
     
             });
-
             
+
         </script>
+     
+
     </body>
 </html>
 
