@@ -1,3 +1,4 @@
+
 <?php
  
  header('Content-Type: text/html; charset=UTF-8');
@@ -6,6 +7,42 @@
  //Si existe la sesión "cliente"..., la guardamos en una variable.
  if (isset($_SESSION['correo'])){
      $cliente = $_SESSION['correo'];
+           $nombreServidor = "localhost";
+           $nombreUsuario = "root";
+           $passwordBaseDeDatos = "";
+           $nombreBaseDeDatos = "fundacion";
+           
+
+          // Crear conexión con la base de datos.
+         $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
+
+        // Validar la conexión de base de datos.
+         if ($conn ->connect_error) {
+         die("Connection failed: " . $conn ->connect_error);
+         }
+         
+         $consulta = "SELECT user_ahorcado FROM wp_users WHERE user_login='$cliente'";
+         $result =  $conn->query($consulta);
+
+         $numero = 0;
+        
+         if($result){
+             $fila = $result->fetch_assoc();
+             $numero2 = array_values($fila);
+             $numero = $numero2[0];
+         }
+          
+         
+
+         if($numero === '2'){
+            header('Location: ./AhorcadoLvl2.php');
+         }
+         
+         if($numero === '3'){
+            header('Location: ./AhorcadoLvl3.php');
+         }
+        
+         $conn->close();
 
 
  }else{
@@ -26,6 +63,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 	<link href="css/pushy-buttons.css" rel="stylesheet">
    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
    <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script> 
+   
 	<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 </style>
@@ -44,6 +82,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
             }
             ?>
         </div>
+
 
 <script>
 function aleatorio(inferior,superior){
@@ -105,7 +144,8 @@ function escribePalabra(palabra, arrayAciertos){
 //// inicio todo!!!
 ////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function(){
-   
+   document.getElementById('sig').disabled=true;
+    document.getElementById('sig').style.display = 'none';
    //creo los botones con las letras
    var letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
    for(i=0; i<letras.length; i++){
@@ -122,7 +162,7 @@ $(document).ready(function(){
             //si está, va para aciertos
             aciertos.push(miletra);
             escribePalabra(palabraEscogida, aciertos);
-            //miro si ha ganado
+            //miro si ha ganado GANAR ES ACA 
             if(estanTodas(aciertos,palabraEscogida)){
                var caja = $('<div class="dialogletra" title="Has Ganado!!">Felicidades! has adivinado la palabra!!</div>');
                caja.dialog({
@@ -133,7 +173,23 @@ $(document).ready(function(){
                      $(this).dialog("close");
                   }
                }
-               });   
+               }); 
+               document.getElementById('sig').disabled=false;
+              document.getElementById('sig').style.display = 'block';
+               var ahorcado = 1;
+              var data_ahorcado = 'ahorcado=' + ahorcado;
+              
+              $.ajax({
+                type: "POST",
+                url: "../guardar-ahorcado.php",
+                data: data_ahorcado,
+                dataType:"html",
+                asycn:false,
+                success: function(){
+                   alert("Ha sido ejecutada la acción.");
+                }
+        }).responseText;
+                
             }
          }else{
             //no estaba
@@ -171,6 +227,7 @@ $(document).ready(function(){
    //inicio las palabras
    escribePalabra(palabraEscogida, aciertos);
    
+
 });
 
 /////////////////////////////////
@@ -306,10 +363,10 @@ function dibujaAhorado(numerrores){
     <div id="botonesletras"></div>
 				</div>
 			<div align="center" id="boton">
-			<button onclick="window.location.href='index2.html'" class="pushy__btn pushy__btn--md pushy__btn--blue">Siguiente</button>	
-				<button onclick="window.location.href='index2.html'" class="pushy__btn pushy__btn--md pushy__btn--green">No lo logré</button>
+			<button onclick="window.location.href='AhorcadoLvl2.php'" class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig">Siguiente</button>	
+				<!--<button onclick="window.location.href='index2.html'" class="pushy__btn pushy__btn--md pushy__btn--green">No lo logré</button>-->
 			<p></p>
-			<button class="pushy__btn pushy__btn--md pushy__btn--red">Salir</button>
+			<button class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='../principal.php'" >Salir</button>
 			</div>
 			</div>
 		</section>
