@@ -142,6 +142,7 @@ function escribePalabra(palabra, arrayAciertos){
 //// inicio todo!!!
 ////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function(){
+   var ahorcado=0;
    document.getElementById('sig').disabled=true;
     document.getElementById('sig').style.display = 'none';
     document.getElementById('perdio').disabled=true;
@@ -176,7 +177,7 @@ $(document).ready(function(){
                }); 
                document.getElementById('sig').disabled=false;
               document.getElementById('sig').style.display = 'block';
-               var ahorcado = 1;
+              ahorcado = 1;
               var data_ahorcado = 'ahorcado=' + ahorcado;
 
               $.ajax({
