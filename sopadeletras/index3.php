@@ -79,6 +79,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 		</div>
 		</div>
 </div>
+		<?php include('../footer.php'); ?>
         <!-- dependencias -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
         <script src="js/wordfind.js"></script>

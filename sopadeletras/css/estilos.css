@@ -18,6 +18,13 @@ body {
 	font-weight: bold;
 }
 
+#footer {
+	margin: 0;
+	padding: 15px 0;
+	background: #00000054;
+	color: #FFFFFF;
+}
+
 #col2{
 	width: 50%;
 	float: left;

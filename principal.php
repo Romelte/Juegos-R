@@ -22,7 +22,13 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css-inicio/inicio.css">
+    <link rel="stylesheet" href="css/style.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.3.1.js"></script>
     <title>Inicio</title>
 </head>
 <body>
@@ -31,36 +37,31 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
     <div class="container">
 
     </div>
-
-    <div id="sesion_cliente">
-            <?php 
-            //Si existe la sesión "correo"...
-            if(isset($_SESSION['correo'])){
-                echo "<p class='negrita'>Bienvenido ".$cliente."&nbsp;&nbsp;";
-                echo "<a href='index.php?salir=1'>Salir</a></p>";
-                //Si existe y hemos pulsado el link "Salir"...
-                if(isset($_REQUEST["salir"])){
-                    //Borramos o destruimos la sesión "correo".
-                    unset($_SESSION["correo"]);
-                }
-            }
-            ?>
-        </div>
-
     <!--cuadro de niveles-->
-    <div class="container">
-        <div class="row">
-          <div class="col-sm Nivel">
-            <h2><a href="./ahorcado/index.php">Ahorcado</a></h2>
+
+<div class="container">
+<header id="cabezote">
+	<?php include('header.php'); ?>
+  </header>
+<div class="texto-central">
+  <h1> loren implus</h1>
+  <p>Loren implus Loren implus Loren implus<br>
+    Loren implus Loren implus Loren implus</p>
+</div>
+  <div class="row">
+          <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="sopadeletras/index.php"><img src="images/juegos_03.png"></a>
+            <a class="btn-juego" href="sopadeletras/index.php"><img src="images/botones_14.png"></a>
+    </div>
+          <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="ahorcado/index.php"><img src="images/juegos_05.png"></a>
+            <a class="btn-juego" href="ahorcado/index.php"><img class="btn-ahorcado" src="images/botones_17.png"></a>
           </div>
-          <div class="col-sm Nivel">
-            <h2><a href="./sopadeletras/index.php">Sopa de letras</a></h2>
-          </div>
-          <div class="col-sm Nivel">
-            <h2><a href="#">laberinto</a></h2>
+          <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="#"><img src="images/juegos_07.png"></a>
+            <a class="btn-juego" href="#"><img src="images/botones_12.png"></a>
           </div>
         </div>
       </div>
+
+<?php include('footer.php'); ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

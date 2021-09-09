@@ -14,9 +14,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+			<div id="logo-login" align="center"><img class="logo-login" src="images/logos-login.png"></div>
             <div class="card">
                 <form method="post" action="datos-registro.php"  class="box">
-                    <h1>Registro</h1>
+                    <h1>Registrate</h1>
                     <p class="text-muted"> Digita tus Datos </p> <input type="text" name="usuario" placeholder="Usuario" required> <input type="password" name="contrasena" placeholder="Contraseña"> <input type="number" name="edad" placeholder="Edad" min="18"> <input type="text" name="correo_personal" placeholder="Correo">  <a class="forgot text-muted" href="index.php">Ingresa</a> <input id="registro" type="submit" name="" value="Registrate" >
                     <!--<div class="col-md-12">
                         <ul class="social-network social-circle">

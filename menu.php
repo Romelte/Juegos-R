@@ -7,6 +7,6 @@
 				  <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../principal.php">Inicio</a>
 			    <div class="dropdown-divider"></div>
-			    <a class="dropdown-item" href="../logout.php">Salir</a> </div>
+			    <a class="dropdown-item" href="logout.php">Salir</a> </div>
 			  </div>
 			</div>

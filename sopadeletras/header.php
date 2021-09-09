@@ -1,4 +1,4 @@
-<?php include('menu.php'); ?>
+<?php include('../menu.php'); ?>
 
 <div id="titulo">Sopa de Letras</div>
 			<div id="logo-libro">
