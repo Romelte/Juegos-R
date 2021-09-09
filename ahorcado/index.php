@@ -59,28 +59,14 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
    <link type="text/css" href="css/cupertino/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />
 	<link rel="stylesheet" href="css/estilos.css">
 	<link href="css/pushy-buttons.css" rel="stylesheet">
+	
+	
    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
    <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script> 
    
 	<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 </style>
-
-<div id="sesion_cliente">
-            <?php 
-            //Si existe la sesión "correo"...
-            if(isset($_SESSION['correo'])){
-                echo "<p class='negrita'>Bienvenido ".$cliente."&nbsp;&nbsp;";
-                echo "<a href='../index.php?salir=1'>Salir</a></p>";
-                //Si existe y hemos pulsado el link "Salir"...
-                if(isset($_REQUEST["salir"])){
-                    //Borramos o destruimos la sesión "correo".
-                    unset($_SESSION["correo"]);
-                }
-            }
-            ?>
-        </div>
-
 
 <script>
 function aleatorio(inferior,superior){
@@ -198,7 +184,7 @@ $(document).ready(function(){
             numFallos++;
             dibujaAhorado(numFallos);
             if(numFallos==2){
-               document.getElementById("dibujoahorcado").innerHTML='<img src="images/error2.png" />';
+               document.getElementById("dibujoahorcado").innerHTML='<img src="images/error2.gif" />';
             }
             //miro si se ha perdido
             if(numFallos==3){
@@ -337,15 +323,11 @@ function dibujaAhorado(numerrores){
 		<div id="general">
 	<div id="container">
 		<header id="cabezote">
-			<div id="menu">
-			<img src="images/maqueta_06.png">
-			</div>
-	<div id="titulo">Los Niños del Viento</div>
-			<div id="logo-libro">
-			<img src="images/logo-red_03.png">
-			</div>		
-			
-			</header>
+		<?php include('header.php'); ?>
+		</header>
+		<div id="sesion_cliente">
+	<?php include('../mostrarusuario.php'); ?>
+	</div>
 		<section id="ahorcado">
 			<div id="col2">
 				<div align="center" class="descripcion1">
@@ -371,9 +353,8 @@ function dibujaAhorado(numerrores){
 			<button onclick="window.location.href='AhorcadoLvl2.php'" class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig">Siguiente</button>	
 				<!--<button onclick="window.location.href='index2.html'" class="pushy__btn pushy__btn--md pushy__btn--green">No lo logré</button>-->
 			<p></p>
-         <button id="perdio" onclick="window.location.href='index.php'">Repetir</button>
+         <button id="perdio" class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='index.php'">Repetir</button>
    </br>
-			<button class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='../principal.php'" >Salir</button>
          
 			</div>
 			</div>

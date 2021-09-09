@@ -7,7 +7,7 @@
  //Si existe la sesión "cliente"..., la guardamos en una variable.
  if (isset($_SESSION['correo'])){
      $cliente = $_SESSION['correo'];
-          
+           
            
 
           // Crear conexión con la base de datos.
@@ -49,29 +49,24 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
  }
 ?>
 
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
 <html>
 <head>
-<div id="sesion_cliente">
-            <?php 
-            //Si existe la sesión "correo"...
-            if(isset($_SESSION['correo'])){
-                echo "<p class='negrita'>Bienvenido ".$cliente."&nbsp;&nbsp;";
-                echo "<a href='../index.php?salir=1'>Salir</a></p>";
-                //Si existe y hemos pulsado el link "Salir"...
-                if(isset($_REQUEST["salir"])){
-                    //Borramos o destruimos la sesión "correo".
-                    unset($_SESSION["correo"]);
-                }
-            }
-            ?>
-        </div>
+	<meta charset="utf-8">
    <title>Aplicaciçon de Ahorcado</title>
-   <link type="text/css" href="css/cupertino/jquery-ui-1.8.1.custom.css" rel="Stylesheet" /> 
+   <link type="text/css" href="css/cupertino/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />
+	<link rel="stylesheet" href="css/estilos.css">
+	<link href="css/pushy-buttons.css" rel="stylesheet">
+	
+	
    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
    <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script> 
+   
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+</style>
+
 <script>
 function aleatorio(inferior,superior){
 numPosibilidades = superior - inferior + 1
@@ -103,7 +98,7 @@ function estanTodas(arrayAciertos, mipalabra){
 ////////////////////////////////////////////////////////////////////////////////
 // PALABRAS
 ////////////////////////////////////////////////////////////////////////////////
-var palabras = ['ahorcado', 'lavadora', 'invierno'];
+var palabras = ['ahorcado'];
 var palabraEscogida = palabras[aleatorio(0,palabras.length-1)]
 var aciertos = [];
 
@@ -132,7 +127,10 @@ function escribePalabra(palabra, arrayAciertos){
 //// inicio todo!!!
 ////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function(){
-   document.getElementById('perdio').disabled=true;
+   var ahorcado=0;
+   document.getElementById('sig').disabled=true;
+    document.getElementById('sig').style.display = 'none';
+    document.getElementById('perdio').disabled=true;
     document.getElementById('perdio').style.display = 'none';
    //creo los botones con las letras
    var letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -150,7 +148,7 @@ $(document).ready(function(){
             //si está, va para aciertos
             aciertos.push(miletra);
             escribePalabra(palabraEscogida, aciertos);
-            //miro si ha ganado
+            //miro si ha ganado GANAR ES ACA 
             if(estanTodas(aciertos,palabraEscogida)){
                var caja = $('<div class="dialogletra" title="Has Ganado!!">Felicidades! has adivinado la palabra!!</div>');
                caja.dialog({
@@ -162,8 +160,9 @@ $(document).ready(function(){
                   }
                }
                }); 
-               
-               var ahorcado = 3;
+               document.getElementById('sig').disabled=false;
+              document.getElementById('sig').style.display = 'block';
+              ahorcado = 3;
               var data_ahorcado = 'ahorcado=' + ahorcado;
 
               $.ajax({
@@ -173,16 +172,21 @@ $(document).ready(function(){
                 dataType:"html",
                 asycn:false,
                 success: function(){
-                   alert("Ha sido ejecutada la acción.");
+                   //alert("Ha sido ejecutada la acción.");
                 }
-        }).responseText;    
+               
+        }).responseText;
+        
             }
          }else{
             //no estaba
             numFallos++;
             dibujaAhorado(numFallos);
+            if(numFallos==2){
+               document.getElementById("dibujoahorcado").innerHTML='<img src="images/error2.gif" />';
+            }
             //miro si se ha perdido
-            if(numFallos==6){
+            if(numFallos==3){
                var caja = $('<div class="dialogletra" title="Has Perdido!!">Lo lamento!! la palabra era: ' + palabraEscogida + '</div>');
                caja.dialog({
                modal: true,
@@ -192,10 +196,11 @@ $(document).ready(function(){
                      $(this).dialog("close");
                   }
                }
-               
                }); 
+               document.getElementById("dibujoahorcado").innerHTML='<img src="images/Volando-animado-600px.gif" />'; 
                document.getElementById('perdio').disabled=false;
-              document.getElementById('perdio').style.display = 'block';  
+              document.getElementById('perdio').style.display = 'block';
+
             }
          }
          //una vez pulsado el botón, lo desabilito y quito su evento click
@@ -212,6 +217,7 @@ $(document).ready(function(){
    //inicio las palabras
    escribePalabra(palabraEscogida, aciertos);
    
+
 });
 
 /////////////////////////////////
@@ -231,69 +237,13 @@ function borrarCanvas(contexto, anchura, altura){
    contexto.clearRect(0,0,anchura,anchura);
 }
 function dibujaHorca(ctx){
-   ctx.fillStyle = '#462501';
-   ctx.fillRect(64,9,26,237);
-   ctx.fillRect(175,193,26,53);
-   ctx.fillRect(64,193,136,15);
-   ctx.fillRect(64,9,115,11);
-   ctx.beginPath();
-   ctx.moveTo(64,65);
-   ctx.lineTo(64,80);
-   ctx.lineTo(133,11);
-   ctx.lineTo(118,11);
-   ctx.fill();
+   
+      document.getElementById("dibujoahorcado").innerHTML='<img src="images/error1.png" />';
+   
 }
-function dibujaCabeza(ctx){
-   var img = new Image(); 
-   img.onload = function(){
-      ctx.fillStyle = '#f2d666';
-      ctx.drawImage(img,150,38);
-      ctx.fillRect(172,12,4,28);
-   } 
-   img.src = 'images/picture.jpg'; 
-}
-function dibujaCuerpo(ctx){
-   ctx.beginPath();
-   ctx.moveTo(171,82);
-   ctx.lineTo(168,119);
-   ctx.lineTo(162,147);
-   ctx.lineTo(189,149);
-   ctx.lineTo(185,111);
-   ctx.lineTo(183,83);
-   ctx.fill()
-}
-function dibujaBrazoIzq(ctx){
-   ctx.beginPath();
-   ctx.moveTo(173,102);
-   ctx.lineTo(140,128);
-   ctx.lineTo(155,133);
-   ctx.lineTo(178,114);
-   ctx.fill()
-}
-function dibujaBrazoDer(ctx){
-   ctx.beginPath();
-   ctx.moveTo(180,99);
-   ctx.lineTo(222,121);
-   ctx.lineTo(209,133);
-   ctx.lineTo(183,110);
-   ctx.fill()
-}
-function dibujaPiernaIzq(ctx){
-   ctx.beginPath();
-   ctx.moveTo(166,142);
-   ctx.lineTo(139,175);
-   ctx.lineTo(164,178);
-   ctx.lineTo(175,144);
-   ctx.fill()
-}
-function dibujaPiernaDer(ctx){
-   ctx.beginPath();
-   ctx.moveTo(178,145);
-   ctx.lineTo(193,178);
-   ctx.lineTo(212,170);
-   ctx.lineTo(188,142);
-   ctx.fill()
-}
+
+
+
 ////////////////////////////////////////////////////////
 // GESTION DE FALLOS
 ////////////////////////////////////////////////////////
@@ -324,7 +274,6 @@ function dibujaAhorado(numerrores){
       
    }
 }
-
 
 </script>
 
@@ -370,22 +319,45 @@ function dibujaAhorado(numerrores){
     </head>
     
     <body>
+		<div id="general">
+	<div id="container">
+		<header id="cabezote">
+		<?php include('header.php'); ?>
+		</header>
+		<div id="sesion_cliente">
+	<?php include('../mostrarusuario.php'); ?>
+	</div>
+		<section id="ahorcado">
+			<div id="col2">
+				<div align="center" class="descripcion1">
+				  <p>Frase de prevención, <span style="font-style: italic">tip</span> o consejo.</p>
+				  <p><br></p>
+				  <p>
+					</p>
+				</div>
     <div id="dibujoahorcado">
        <canvas id="canvasahorcado" width="320" height="250">
        El Ahorcado sólo funciona en navegadores que soporten Canvas. Actualízate a Firefox o Chrome, por poner dos posibilidades.
        </canvas>
     </div>
+			</div>	
+		<div id="col2">
+			<div align="center" id="bg-letras">
+				<div align="left" id="pista"><span style="text-align: left; font-size: 24px; font-weight: bold;">Pista:</span><br><span style="text-align: left; font-size: 18px;"> Una consecuencia del Abuso Sexual Infantil</span></div>
     <div id="letras">
     </div>
     <div id="botonesletras"></div>
-    <div align="center" id="boton">
-			<!--<button onclick="window.location.href='AhorcadoLvl2.php'" class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig">Siguiente</button>-->
+				</div>
+			<div align="center" id="boton">
+			<!--<button onclick="window.location.href='AhorcadoLvl3.php'" class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig">Siguiente</button>	-->
 				<!--<button onclick="window.location.href='index2.html'" class="pushy__btn pushy__btn--md pushy__btn--green">No lo logré</button>-->
 			<p></p>
-         <button id="perdio" onclick="window.location.href='AhorcadoLvl2.php'">Repetir</button>
+         <button id="perdio" class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='AhorcadoLvl3.php'">Repetir</button>
    </br>
-			<button class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='../principal.php'" >Salir</button>
+         
 			</div>
-			
+			</div>
+		</section>
+			</div>
     </body>
     </html>
