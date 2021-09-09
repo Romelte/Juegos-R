@@ -89,7 +89,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
             // palabras a usar
             var words = ['colombia', 'españa', 'francia', 'china', 'siria', 'africa',
                'magdalena', 'peru', 'universidad', 'venezuela', 'aniversario',
-               'pokemon', 'romel', 'pikachu', 'pereira','artistica', 'apariencia', 'meteorito', 'biba', 'tornado'
+               'pokemon', 'romel', 'pikachu'
                
            ];
 

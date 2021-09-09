@@ -97,7 +97,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <script>
             // palabras a usar
          var words = ['colombia', 'españa', 'francia', 'china', 'siria', 'africa',
-               'magdalena','congreso','decreto','ley'
+               
            ];
 
             //  !

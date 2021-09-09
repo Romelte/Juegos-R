@@ -33,7 +33,7 @@ if ($conn ->connect_error) {
     
 
     if($numero === '0'){
-       header('Location: index1.php');
+       header('Location: index.php');
     }
     
     if($numero === '3'){
@@ -97,8 +97,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <script>
             // palabras a usar
           var words = ['colombia', 'españa', 'francia', 'china', 'siria', 'africa',
-               'magdalena','japon','medellin','bogota','fiscalia','denuncia','espacio','colegios',
-               'educacion','ley','decreto','congreso','proteccion'
+               'magdalena','japon','medellin','bogota'
            ];
 
 
