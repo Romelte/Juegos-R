@@ -84,7 +84,7 @@ Mazing.prototype.heroTakeKey = function() {
   this.heroHasKey = true;
   this.heroScore += 20;
   this.mazeScore.classList.add("has-key");
-  this.setMessage("you now have the key!");
+  this.setMessage("Ahora tienes la llave!");
 };
 
 Mazing.prototype.gameOver = function(text) {
@@ -126,7 +126,7 @@ Mazing.prototype.tryMoveHero = function(pos) {
     if(this.heroHasKey) {
       this.heroWins();
     } else {
-      this.setMessage("you need a key to unlock the door");
+      this.setMessage("Necesitas una llave para la puerta");
       return;
     }
   }

@@ -55,8 +55,8 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
           <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="ahorcado/index.php"><img src="images/juegos_05.png"></a>
             <a class="btn-juego" href="ahorcado/index.php"><img class="btn-ahorcado" src="images/botones_17.png"></a>
           </div>
-          <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="#"><img src="images/juegos_07.png"></a>
-            <a class="btn-juego" href="#"><img src="images/botones_12.png"></a>
+          <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="laberinto/index.php"><img src="images/juegos_07.png"></a>
+            <a class="btn-juego" href="laberinto/index.php"><img src="images/botones_12.png"></a>
           </div>
         </div>
       </div>

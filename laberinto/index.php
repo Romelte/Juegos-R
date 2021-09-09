@@ -1,10 +1,25 @@
+<?php
+ 
+ header('Content-Type: text/html; charset=UTF-8');
+ //Iniciar una nueva sesión o reanudar la existente.
+ session_start();
+ //Si existe la sesión "cliente"..., la guardamos en una variable.
+ if (isset($_SESSION['correo'])){
+     $cliente = $_SESSION['correo'];
+
+ }else{
+header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
+  die() ;
+
+ }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/mazing.css">
+    <link rel="stylesheet" type="text/css" href="mazing.css">
     <title>Laberinto</title>
 </head>
 <body>
@@ -43,11 +58,11 @@
         <div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div></div><div class="wall"></div></div>
         <div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div class="key"></div><div></div><div></div><div></div><div></div><div class="wall"></div></div>
         <div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door entrance hero"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div>
-        </div><div id="maze_output" style="width: 594px;"><div id="maze_score">192</div><div id="maze_message">first find the key</div></div>
+        </div><div id="maze_output" style="width: 594px;"><div id="maze_score">192</div><div id="maze_message">Primero encuentra la llave</div></div>
         </div>
 
-<script src="/mazing.js"></script>
-<script src="/maze-builder.js"></script>
+<script src="mazing.js"></script>
+<script src="maze-builder.js"></script>
 <script>
 
   window.addEventListener("DOMContentLoaded", function(e) {
