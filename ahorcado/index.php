@@ -7,10 +7,10 @@
  //Si existe la sesión "cliente"..., la guardamos en una variable.
  if (isset($_SESSION['correo'])){
      $cliente = $_SESSION['correo'];
-           $nombreServidor = "localhost";
-           $nombreUsuario = "root";
-           $passwordBaseDeDatos = "";
-           $nombreBaseDeDatos = "fundacion";
+           $nombreServidor = "127.0.0.1";
+           $nombreUsuario = "u860849274_juegos";
+           $passwordBaseDeDatos = "lucheTTi-01";
+           $nombreBaseDeDatos = "u860849274_juegos";
            
 
           // Crear conexión con la base de datos.
@@ -188,7 +188,7 @@ $(document).ready(function(){
                 dataType:"html",
                 asycn:false,
                 success: function(){
-                   alert("Ha sido ejecutada la acción.");
+                   
                 }
         }).responseText;
                 

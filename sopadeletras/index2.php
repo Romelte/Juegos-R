@@ -33,11 +33,11 @@ if ($conn ->connect_error) {
     
 
     if($numero === '0'){
-       header('Location: ./index2.php');
+       header('Location: index1.php');
     }
     
     if($numero === '3'){
-       header('Location: ./index3.php');
+       header('Location: index3.php');
     }
 
     $conn->close();
@@ -96,8 +96,12 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <!--logica -->
         <script>
             // palabras a usar
-            var words = ['colombia'
+          var words = ['colombia', 'españa', 'francia', 'china', 'siria', 'africa',
+               'magdalena','japon','medellin','bogota','fiscalia','denuncia','espacio','colegios',
+               'educacion','ley','decreto','congreso','proteccion'
            ];
+
+
 
             //  !
             var gamePuzzle = wordfindgame.create(words, '#puzzle-container', '#puzzle-words');

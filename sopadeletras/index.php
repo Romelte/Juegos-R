@@ -34,11 +34,11 @@
          
 
          if($numero === '2'){
-            header('Location: ./index2.php');
+            header('Location: index2.php');
          }
          
          if($numero === '3'){
-            header('Location: ./index3.php');
+            header('Location: index3.php');
          }
         
          $conn->close();
@@ -96,7 +96,8 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <!--logica -->
         <script>
             // palabras a usar
-            var words = ['colombia'
+         var words = ['colombia', 'españa', 'francia', 'china', 'siria', 'africa',
+               'magdalena','congreso','decreto','ley'
            ];
 
             //  !

@@ -87,8 +87,12 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <!--logica -->
         <script>
             // palabras a usar
-            var words = ['colombia'
+            var words = ['colombia', 'españa', 'francia', 'china', 'siria', 'africa',
+               'magdalena', 'peru', 'universidad', 'venezuela', 'aniversario',
+               'pokemon', 'romel', 'pikachu', 'pereira','artistica', 'apariencia', 'meteorito', 'biba', 'tornado'
+               
            ];
+
 
             //  !
             var gamePuzzle = wordfindgame.create(words, '#puzzle-container', '#puzzle-words');

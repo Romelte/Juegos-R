@@ -102,7 +102,7 @@ var llave;
                 dataType:"html",
                 asycn:false,
                 success: function(){
-                   alert("Ha sido ejecutada la acción.");
+                   
                 }
         }).responseText;
               
