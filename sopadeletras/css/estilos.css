@@ -163,11 +163,17 @@ body {
     background-color: #226583;
 }
 
+/* estilos cuadro de sopa nivel1 */
+#puzzle-container.nivel1 {
+	width: 300px;
+    height: 284px;
+}
 
 /* estilos cuadro de sopa nivel2 */
 #puzzle-container.nivel2 {
-    width: 400px;
-    height: 400px;
+    width: 325px;
+    height: 315px;
+    margin-bottom: 63px;
 }
 
 /* estilos cuadro de sopa nivel3 */

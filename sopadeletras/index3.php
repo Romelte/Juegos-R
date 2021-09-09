@@ -60,11 +60,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 		<div id="col2">
 		<div align="center" class="descripcion3">Encuentra las palabras listadas, que tienen relación con nuestro capítulo "La niña que creció luchando por los niños".</div>
         <div align="center" class="palabras" id="puzzle-words"></div>
-        <div align="center" id="boton">
-			<button onclick="window.location.href='../principal.php'" class="pushy__btn pushy__btn--md pushy__btn--blue">Volver</button>			
-			<!--<input type="button" class="pushy__btn pushy__btn--md pushy__btn--green" id="solveBTN" value="Resolver" align="middle"/> -->
-			<p></p>
-        </div>
+        
 			</div>
 			
 			<div id="col2">

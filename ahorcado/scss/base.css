@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$blue".
-        on line 40 of F:\TRABAJOS2\LIBRO RED\JUEGOS\sopa de letras\sopa de letras\scss\base.scss
+        on line 40 of C:\wamp\www\Juegos-R\Juegos-R\ahorcado\scss\base.scss
 
 35:   }
 36: 
@@ -15,7 +15,7 @@ Error: Undefined variable: "$blue".
 45:   }
 
 Backtrace:
-F:\TRABAJOS2\LIBRO RED\JUEGOS\sopa de letras\sopa de letras\scss\base.scss:40
+C:\wamp\www\Juegos-R\Juegos-R\ahorcado\scss\base.scss:40
 C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -72,4 +72,4 @@ C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/bin/sass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$blue\".\A         on line 40 of F:\TRABAJOS2\LIBRO RED\JUEGOS\sopa de letras\sopa de letras\scss\base.scss\A \A 35:   }\A 36: \A 37:   // Colors\A 38:   // -----------\A 39:   &--blue {\A 40:     background-color: $blue;\A 41:   }\A 42: \A 43:   &--green {\A 44:     background-color: $green;\A 45:   }"; }
+  content: "Error: Undefined variable: \"$blue\".\A         on line 40 of C:\wamp\www\Juegos-R\Juegos-R\ahorcado\scss\base.scss\A \A 35:   }\A 36: \A 37:   // Colors\A 38:   // -----------\A 39:   &--blue {\A 40:     background-color: $blue;\A 41:   }\A 42: \A 43:   &--green {\A 44:     background-color: $green;\A 45:   }"; }
