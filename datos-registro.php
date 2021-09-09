@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include 'base.php'; 
+
  $usuario = $_POST['usuario'];
  $contrasena = md5($_POST['contrasena']);
  $edad = $_POST['edad'];
@@ -8,11 +10,7 @@ session_start();
  $sopa = 0;
  $ahorcado = 0;
  $laberinto =0;
-  // Datos para conectar a la base de datos.
-  $nombreServidor = "127.0.0.1";
-  $nombreUsuario = "u860849274_juegos";
-  $passwordBaseDeDatos = "lucheTTi-01";
-  $nombreBaseDeDatos = "u860849274_juegos";
+ 
  
   // Crear conexión con la base de datos.
  $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);

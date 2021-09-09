@@ -3,13 +3,11 @@
  header('Content-Type: text/html; charset=UTF-8');
  //Iniciar una nueva sesión o reanudar la existente.
  session_start();
+ include '../base.php';
  //Si existe la sesión "cliente"..., la guardamos en una variable.
  if (isset($_SESSION['correo'])){
      $cliente = $_SESSION['correo'];
-     $nombreServidor = "127.0.0.1";
-     $nombreUsuario = "u860849274_juegos";
-     $passwordBaseDeDatos = "lucheTTi-01";
-     $nombreBaseDeDatos = "u860849274_juegos";
+     
      
 
     // Crear conexión con la base de datos.
