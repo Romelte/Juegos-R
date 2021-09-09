@@ -146,6 +146,8 @@ function escribePalabra(palabra, arrayAciertos){
 $(document).ready(function(){
    document.getElementById('sig').disabled=true;
     document.getElementById('sig').style.display = 'none';
+    document.getElementById('perdio').disabled=true;
+    document.getElementById('perdio').style.display = 'none';
    //creo los botones con las letras
    var letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
    for(i=0; i<letras.length; i++){
@@ -210,7 +212,10 @@ $(document).ready(function(){
                   }
                }
                }); 
-               document.getElementById("dibujoahorcado").innerHTML='<img src="images/error3.png" />';  
+               document.getElementById("dibujoahorcado").innerHTML='<img src="images/error3.png" />'; 
+               document.getElementById('perdio').disabled=false;
+              document.getElementById('perdio').style.display = 'block';
+
             }
          }
          //una vez pulsado el botón, lo desabilito y quito su evento click
@@ -366,7 +371,10 @@ function dibujaAhorado(numerrores){
 			<button onclick="window.location.href='AhorcadoLvl2.php'" class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig">Siguiente</button>	
 				<!--<button onclick="window.location.href='index2.html'" class="pushy__btn pushy__btn--md pushy__btn--green">No lo logré</button>-->
 			<p></p>
+         <button id="perdio" onclick="window.location.href='index.php'">Repetir</button>
+   </br>
 			<button class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='../principal.php'" >Salir</button>
+         
 			</div>
 			</div>
 		</section>
