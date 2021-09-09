@@ -14,10 +14,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+			<div id="logo-login" align="center"><img class="logo-login" src="images/logos-login.png"></div>
             <div class="card">
                 <form method="post" action="ingreso.php"  class="box">
-                    <h1>Login</h1>
-                    <p class="text-muted"> Ingresa tu usuario y tu contraseña </p> <input type="text" name="correo" placeholder="Usuario"> <input type="password" name="contrasena" placeholder="Contraseña"> <a class="forgot text-muted" href="registro.php">Registrate</a> <input type="submit" name="" value="Login" >
+                    <h1>Ingresar</h1>
+                    <p class="text-muted"> Ingresa tu usuario y tu contraseña </p> <input type="text" name="correo" placeholder="Usuario"> <input type="password" name="contrasena" placeholder="Contraseña"> <a class="forgot text-muted" href="registro.php">Registrate</a> <input type="submit" name="" value="Iniciar Sesión" >
                     <!--<div class="col-md-12">
                         <ul class="social-network social-circle">
                             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>

@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    background-image: url(../images/bg-principal.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+p {
+	font-family: 'Poppins', sans-serif;
+	color: #303030;
+}
+
+a {
+    color: #d0362f;
+}
+
+h1 {
+	font-family: 'Poppins', sans-serif;
+	color: #303030;
+}
+
+.bienvenido {
+	font-family: 'Poppins', sans-serif;
+	color: #303030;
+	font-size: 35px;
+}
+
+.negrita {
+	font-weight: bold;
+}
+
+
+.col-sm.Nivel {
+    margin: 0;
+    padding: 0;
+}
+
+.col-sm.Nivel h2 {
+    text-align: center;
+    cursor: pointer;
+}
+
+.col-sm.Nivel h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+#col2{
+	width: 50%;
+	float: left;
+}
+
+#general,
+
+#container{
+	width: 1140px;
+	margin: 0 auto;
+}
+
+#cabezote{
+    width: 100%;
+    display: table;
+    margin-top: 20px;
+    margin-bottom: 30px;
+	
+}
+
+#menu{
+    float: left;
+    margin-top: 22px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 0;
+}
+
+#menu{
+    width: 7%;
+    float: left;
+}
+
+#logo{
+    float: left;
+    width: 5%;
+	margin: 0 20px;
+}
+
+#logo img{
+    width: 180px;
+}
+
+#logo-libro{
+    float: right;
+    width: 25%;
+}
+
+#logo-libro img{
+    width: 300px;
+    float: right;
+}
+
+#contador{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15pt;
+    text-align: center;
+    color: #575757;
+    margin-top: 48px;
+    margin-right: 12px;
+    margin-left: 66px;
+    margin-bottom: 12px;
+}
+
+#titulo {
+    width: 50%;
+	float: left;
+}
+
+#titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 42pt;
+    text-align: center;
+    color: #303030;
+    margin-left: 70px;
+    font-weight: bold;
+}
+
+.nina-animada{
+    width: 723px;
+    align-content: center;
+	
+}
+
+.nina-animada3{
+    width: 723px;
+    align-content: center;
+    margin-top: -248px;
+}
+
+#footer {
+	margin: 50px 0 20px 0;
+}
+
+.btn-juego:hover {filter: saturate(180%);}
+
+.btn-ahorcado {
+	margin: 5px 0 0 0;
+}

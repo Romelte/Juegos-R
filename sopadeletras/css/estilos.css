@@ -1,8 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
 body {
     background-image: url(../images/bg-escaleras.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
+}
+
+.bienvenido {
+	font-family: 'Poppins', sans-serif;
+	color: #303030;
+	margin-left: 50px;
+}
+
+.negrita {
+	font-weight: bold;
+}
+
+#footer {
+	margin: 0;
+	padding: 15px 0;
+	background: #00000054;
+	color: #FFFFFF;
 }
 
 #col2{
@@ -124,7 +144,7 @@ body {
 /* indica cuando se ha seleccionado un cuadrado */
 
 #puzzle-container .selected {
-    background-color: orange;
+    background-color: #e97e66;
 }
 /* indica que el cuadrado es parte de una palabra que se ha encontrado */
 
@@ -140,7 +160,7 @@ body {
 /* indica que se han encontrado todas las palabras */
 
 #puzzle-container .complete {
-    background-color: green;
+    background-color: #226583;
 }
 
 

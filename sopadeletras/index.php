@@ -1,4 +1,3 @@
-
 <?php
  
  header('Content-Type: text/html; charset=UTF-8');
@@ -53,44 +52,20 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Sopa de letras RED</title>
-		<link href="css/pushy-buttons.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="css/condicion.css">
-		<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-</style>
-    </head>
-    <div id="sesion_cliente">
-            <?php 
-            //Si existe la sesión "correo"...
-            if(isset($_SESSION['correo'])){
-                echo "<p class='negrita'>Bienvenido ".$cliente."&nbsp;&nbsp;";
-                echo "<a href='../index.php?salir=1'>Salir</a></p>";
-                //Si existe y hemos pulsado el link "Salir"...
-                if(isset($_REQUEST["salir"])){
-                    //Borramos o destruimos la sesión "correo".
-                    unset($_SESSION["correo"]);
-                }
-            }
-            ?>
-        </div>
+	
+    <?php include('head.php'); ?>
+	
     <body>
         <!-- Add required markup -->
 <div id="general">
 	<div id="container">
 		<header id="cabezote">
-			<div id="menu">
-			<img src="images/maqueta_06.png">
-			</div>
-	<div id="titulo">Sopa de Letras</div>
-			<div id="logo-libro">
-			<img src="images/maqueta_03.png">
-			</div>		
-			
-			</header>
+		<?php include('header.php'); ?>
+		</header>
+	
+		<div id="sesion_cliente">
+	<?php include('../mostrarusuario.php'); ?>
+	</div>
 		
 		<section id="sopa">
 		<div id="col2">
@@ -99,9 +74,8 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <div align="center" id="boton">
 			<button onclick="window.location.href='index2.php' "class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig" >Siguiente</button>			
 			<!--<input type="button" class="pushy__btn pushy__btn--md pushy__btn--green" id="solveBTN" value="Resolver" align="middle"/> -->
-			<p></p>
-			<button class="pushy__btn pushy__btn--md pushy__btn--red">Salir</button>
-			</div>
+		  <p></p>
+        </div>
 			</div>
 			
 			<div id="col2">
@@ -114,6 +88,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 		</div>
 		</div>
 </div>
+		<?php include('../footer.php'); ?>
         <!-- dependencias -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
         <script src="js/wordfind.js"></script>
