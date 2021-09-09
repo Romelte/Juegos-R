@@ -11,7 +11,6 @@ body {
 .bienvenido {
 	font-family: 'Poppins', sans-serif;
 	color: #303030;
-	margin-left: 50px;
 }
 
 .negrita {
@@ -137,7 +136,7 @@ body {
 /* indica cuando se ha seleccionado un cuadrado */
 
 #puzzle-container .selected {
-    background-color: #e97e66;
+    background-color: orange;
 }
 /* indica que el cuadrado es parte de una palabra que se ha encontrado */
 
@@ -153,7 +152,7 @@ body {
 /* indica que se han encontrado todas las palabras */
 
 #puzzle-container .complete {
-    background-color: #226583;
+    background-color: green;
 }
 
 
