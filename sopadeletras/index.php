@@ -78,7 +78,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 			</div>
 			
 			<div id="col2">
-		        <div align="center" id="puzzle-container"></div>
+		        <div align="center" class="nivel1" id="puzzle-container"></div>
 				</div>
 		</section>
 		

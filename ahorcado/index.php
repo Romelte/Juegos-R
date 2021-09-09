@@ -211,7 +211,7 @@ $(document).ready(function(){
                   }
                }
                }); 
-               document.getElementById("dibujoahorcado").innerHTML='<img src="images/error3.png" />'; 
+               document.getElementById("dibujoahorcado").innerHTML='<img src="images/Volando-animado-600px.gif" />'; 
                document.getElementById('perdio').disabled=false;
               document.getElementById('perdio').style.display = 'block';
 
