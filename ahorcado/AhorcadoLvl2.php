@@ -171,7 +171,7 @@ $(document).ready(function(){
               document.getElementById('sig').style.display = 'block';
                var ahorcado = 2;
               var data_ahorcado = 'ahorcado=' + ahorcado;
-              
+
               $.ajax({
                 type: "POST",
                 url: "../guardar-ahorcado.php",
@@ -179,7 +179,7 @@ $(document).ready(function(){
                 dataType:"html",
                 asycn:false,
                 success: function(){
-                  
+                   alert("Ha sido ejecutada la acción.");
                 }
         }).responseText;  
             }
