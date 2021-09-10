@@ -1,49 +1,33 @@
-
+@charset "utf-8";
+/* CSS Document */
 
 body {
-    background-image: url(../images/bg-bosque2.jpg);
+    background-image: url( "../images/caperucita-fondo-1920x1920.jpg");
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center center;
     background-size: cover;
-}
-
-p {
-	font-family: 'Poppins', sans-serif;
-}
-
-a {
-    color: #d0362f;
-}
-
-h1 {
-	font-family: 'Poppins', sans-serif;
-	color: #303030;
 }
 
 .bienvenido {
 	font-family: 'Poppins', sans-serif;
 	color: #303030;
-	font-size: 22px;
-	margin-left: 30px;
+	margin-left: 50px;
 }
 
 .negrita {
 	font-weight: bold;
 }
 
+#footer {
+	margin: 0;
+	padding: 15px 0;
+	background: #00000054;
+	color: #FFFFFF;
+}
 
 #col2{
 	width: 50%;
 	float: left;
-}
-
-#pista {
-    padding-top: 15px;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-bottom: 41px;
-    color: #416482;
-    font-family: 'Poppins', sans-serif;
 }
 
 #general,
@@ -51,14 +35,6 @@ h1 {
     width: 100%;
     display: table;
     margin-top: -9px;
-}
-
-#bg-letras {
-    background: rgba(255,255,255,1.00);
-    width: 350px;
-    height: 290px;
-    padding-top: 0px;
-    margin-top: 30px;
 }
 
 #container{
@@ -69,6 +45,8 @@ h1 {
 #cabezote{
     width: 100%;
     display: table;
+    margin-top: 20px;
+    margin-bottom: 30px;
 	
 }
 
@@ -81,7 +59,7 @@ h1 {
 }
 
 #menu{
-    width: 3%;
+    width: 7%;
     float: left;
 }
 
@@ -93,7 +71,6 @@ h1 {
 #logo-libro img{
     width: 200px;
     float: right;
-    margin-top: 10px;
 }
 
 #contador{
@@ -108,19 +85,17 @@ h1 {
 }
 
 #titulo {
-    width: 55%;
+    width: 50%;
 	float: left;
 }
 
 #titulo {
     font-family: 'Poppins', sans-serif;
-    font-size: 38pt;
+    font-size: 50pt;
     text-align: center;
-    color: #416482;
-    margin-left: 0;
+    color: #ffffff;
+    margin-left: 51px;
     font-weight: bold;
-    text-shadow: 0 0;
-    padding-top: 19px;
 }
 
 
@@ -169,7 +144,7 @@ h1 {
 /* indica cuando se ha seleccionado un cuadrado */
 
 #puzzle-container .selected {
-    background-color: orange;
+    background-color: #e97e66;
 }
 /* indica que el cuadrado es parte de una palabra que se ha encontrado */
 
@@ -185,13 +160,20 @@ h1 {
 /* indica que se han encontrado todas las palabras */
 
 #puzzle-container .complete {
-    background-color: green;
+    background-color: #226583;
+}
+
+/* estilos cuadro de sopa nivel1 */
+#puzzle-container.nivel1 {
+	width: 300px;
+    height: 284px;
 }
 
 /* estilos cuadro de sopa nivel2 */
 #puzzle-container.nivel2 {
-    width: 400px;
-    height: 400px;
+    width: 325px;
+    height: 315px;
+    margin-bottom: 63px;
 }
 
 /* estilos cuadro de sopa nivel3 */
@@ -214,11 +196,11 @@ h1 {
     color: #FFFFFF;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
-    background-color: #D17263;
+    background-color: #00956f;
     padding-bottom: 15px;
     border-radius: 25px;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
 }
 
 .descripcion2 {
@@ -310,7 +292,6 @@ h1 {
 
 #boton{
 	margin: 15px 0;
-	width: 380px;
 }
 
 #solve {
@@ -320,3 +301,4 @@ h1 {
 #solveBTN {
     align-content: center;
 }
+

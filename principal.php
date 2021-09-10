@@ -23,6 +23,13 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="assets/css/styles.css" />
+
+		<!-- Font Awesome Stylesheet -->
+		<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css" />
+
+		<!-- Including Open Sans Condensed from Google Fonts -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -55,8 +62,8 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
           <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="ahorcado/index.php"><img src="images/juegos_05.png"></a>
             <a class="btn-juego" href="ahorcado/index.php"><img class="btn-ahorcado" src="images/botones_17.png"></a>
           </div>
-          <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="#"><img src="images/juegos_07.png"></a>
-            <a class="btn-juego" href="#"><img src="images/botones_12.png"></a>
+          <div align="center" class="col-sm Nivel"> <a class="btn-juego" href="laberinto/index.php"><img src="images/juegos_07.png"></a>
+            <a class="btn-juego" href="laberinto/index.php"><img src="images/botones_12.png"></a>
           </div>
         </div>
       </div>

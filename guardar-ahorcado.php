@@ -10,7 +10,7 @@ $nivel = $_POST['ahorcado'];
         
            
            
-           $usuariosopa= $_SESSION['correo'];
+           $usuarioahorcado= $_SESSION['correo'];
 
           // Crear conexión con la base de datos.
          $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
