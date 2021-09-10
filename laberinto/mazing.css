@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     background-image: url( "images/caperucita-fondo-1920x1920.jpg");
     background-repeat: no-repeat;
@@ -6,6 +7,8 @@ body {
 }
 
 
+=======
+>>>>>>> 0dfb3acf80b9fd0b47e4e6d956f307d690118a31
 #maze_container {
     position: relative;
     display: inline-block;

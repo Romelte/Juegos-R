@@ -15,6 +15,7 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
 ?>
 <!DOCTYPE html>
 <html lang="es">
+<<<<<<< HEAD
 	
 	<?php include('head.php'); ?>
 
@@ -29,6 +30,17 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
 	<?php include('../mostrarusuario.php'); ?>
 	</div>
     <div align="center" id="maze_container">
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="mazing.css">
+    <title>Laberinto</title>
+</head>
+<body>
+    <div id="maze_container">
+>>>>>>> 0dfb3acf80b9fd0b47e4e6d956f307d690118a31
         <div id="maze" data-steps="194">
         <div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door exit"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div>
         <div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div></div><div class="wall"></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div class="wall"></div><div></div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div></div>
@@ -65,11 +77,15 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
         <div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door entrance hero"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div>
         </div><div id="maze_output" style="width: 594px;"><div id="maze_score">192</div><div id="maze_message">Primero encuentra la llave</div></div>
         </div>
+<<<<<<< HEAD
 		</div>
 	</div>
 
 	<?php include('../footer.php'); ?>
 	
+=======
+
+>>>>>>> 0dfb3acf80b9fd0b47e4e6d956f307d690118a31
 <script src="mazing.js"></script>
 <script src="maze-builder.js"></script>
 <script>
