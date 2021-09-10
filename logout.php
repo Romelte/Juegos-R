@@ -1,5 +1,5 @@
 <?php
-@session_start();
+session_start();
 session_destroy();
-header("Location: index.php");
+header("Location:https://redcontraelabusosexual.org/juegos-beta/Juegos-R/index.php");
 ?>

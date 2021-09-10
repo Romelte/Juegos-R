@@ -6,6 +6,7 @@
 		<link href="css/pushy-buttons.css" rel="stylesheet">
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="css/condicion.css">
+		<link rel="stylesheet" href="../css/menu.css">
 		<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 </style>

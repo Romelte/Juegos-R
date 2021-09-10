@@ -1,5 +1,5 @@
-<?php /*?><div align="left" style="width: 100px"><?php include('menu.php'); ?></div><?php */?>
-<div style="margin:0 0 0 130px;">
+<?php include('menu.php'); ?>
+<div style="margin:-240px 0 0 130px;">
 <div id="logo">
 			<img src="images/logo-red_03.png">
 			</div>

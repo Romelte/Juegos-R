@@ -50,22 +50,15 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
 ?>
 <!DOCTYPE html>
 <html lang="es">
-	
-	<?php include('head.php'); ?>
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="mazing.css">
+    <title>Laberinto Nivel 3</title>
+</head>
 <body>
-	<div id="general">
-	<div id="container">
-	<header id="cabezote">
-		<?php include('header.php'); ?>
-		</header>
-	
-		<div id="sesion_cliente">
-	<?php include('../mostrarusuario.php'); ?>
-	</div>
-  <body>
     <div id="maze_container">
-    <div align="center" id="maze_container">
         <div id="maze" data-steps="194">
         <div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door exit"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div>
         <div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div></div><div class="wall"></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div class="wall"></div><div></div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div></div>
@@ -102,16 +95,12 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
         <div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door entrance hero"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div>
         </div><div id="maze_output" style="width: 594px;"><div id="maze_score">192</div><div id="maze_message">Primero encuentra la llave</div></div>
         </div>
-		</div>
-	</div>
- <div  align="center" id="boton">
+        <div  align="center" id="boton">
 				
-      <button id="perdio" class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='index.php'">Repetir</button>
-   </br>  
-			</div>
-	<?php include('../footer.php'); ?>
-	
-<script src="mazing3.js"></script>
+        <button id="perdio" class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='index.php'">Repetir</button>
+     </br>  
+        </div>
+<script src="mazing.js"></script>
 <script src="maze-builder.js"></script>
 <script>
 

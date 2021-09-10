@@ -128,11 +128,6 @@ function escribePalabra(palabra, arrayAciertos){
 ////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function(){
    var ahorcado=0;
-<<<<<<< HEAD
-=======
-   document.getElementById('sig').disabled=true;
-    document.getElementById('sig').style.display = 'none';
->>>>>>> 0dfb3acf80b9fd0b47e4e6d956f307d690118a31
     document.getElementById('perdio').disabled=true;
     document.getElementById('perdio').style.display = 'none';
    //creo los botones con las letras
@@ -163,11 +158,6 @@ $(document).ready(function(){
                   }
                }
                }); 
-<<<<<<< HEAD
-=======
-               document.getElementById('sig').disabled=false;
-              document.getElementById('sig').style.display = 'block';
->>>>>>> 0dfb3acf80b9fd0b47e4e6d956f307d690118a31
               ahorcado = 3;
               var data_ahorcado = 'ahorcado=' + ahorcado;
 
@@ -365,5 +355,6 @@ function dibujaAhorado(numerrores){
 			</div>
 		</section>
 			</div>
+	
     </body>
     </html>

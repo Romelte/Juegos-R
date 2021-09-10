@@ -8,6 +8,10 @@ body {
     background-size: cover;
 }
 
+#sesion_cliente {
+	margin-top: -110px;
+}
+
 .bienvenido {
 	font-family: 'Poppins', sans-serif;
 	color: #303030;

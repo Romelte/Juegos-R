@@ -360,5 +360,6 @@ function dibujaAhorado(numerrores){
 			</div>
 		</section>
 			</div>
+	
     </body>
     </html>
