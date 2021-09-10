@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
     background-image: url( "images/caperucita-fondo-1920x1920.jpg");
     background-repeat: no-repeat;
@@ -7,11 +6,10 @@ body {
 }
 
 
-=======
->>>>>>> 0dfb3acf80b9fd0b47e4e6d956f307d690118a31
 #maze_container {
     position: relative;
     display: inline-block;
+    width: 500px;
   }
   #maze {
     position: relative;
@@ -97,7 +95,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    content: "PERDISTE";
+    content: "FINALIZADO";
     background: rgba(0,0,0,0.4);
     text-transform: uppercase;
     font-family: monospace;

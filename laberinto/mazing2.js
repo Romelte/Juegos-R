@@ -136,7 +136,7 @@ Mazing.prototype.tryMoveHero = function(pos) {
       this.heroWins();
       document.getElementById('sig').disabled=false;
       document.getElementById('sig').style.display = 'block';
-              laberinto = 1;
+              laberinto = 2;
               var data_laberinto = 'laberinto=' + laberinto;
 
               $.ajax({
@@ -146,7 +146,7 @@ Mazing.prototype.tryMoveHero = function(pos) {
                 dataType:"html",
                 asycn:false,
                 success: function(){
-                  // alert("Ha sido ejecutada la acción.");
+                   //alert("Ha sido ejecutada la acción.");
                 }
 
     })

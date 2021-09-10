@@ -3,19 +3,53 @@
  header('Content-Type: text/html; charset=UTF-8');
  //Iniciar una nueva sesión o reanudar la existente.
  session_start();
+ include '../base.php';
  //Si existe la sesión "cliente"..., la guardamos en una variable.
  if (isset($_SESSION['correo'])){
      $cliente = $_SESSION['correo'];
+           
+           
+
+          // Crear conexión con la base de datos.
+         $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
+
+        // Validar la conexión de base de datos.
+         if ($conn ->connect_error) {
+         die("Connection failed: " . $conn ->connect_error);
+         }
+         
+         $consulta = "SELECT user_laberinto FROM wp_users WHERE user_login='$cliente'";
+         $result =  $conn->query($consulta);
+
+         $numero = 0;
+        
+         if($result){
+             $fila = $result->fetch_assoc();
+             $numero2 = array_values($fila);
+             $numero = $numero2[0];
+         }
+          
+         
+
+         if($numero === '1'){
+            header('Location: ./index2.php');
+         }
+         
+         if($numero === '2'){
+            header('Location: ./index3.php');
+         }
+        
+         $conn->close();
+
 
  }else{
-header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
+header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
   die() ;
 
  }
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<<<<<<< HEAD
 	
 	<?php include('head.php'); ?>
 
@@ -29,18 +63,9 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
 		<div id="sesion_cliente">
 	<?php include('../mostrarusuario.php'); ?>
 	</div>
-    <div align="center" id="maze_container">
-=======
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="mazing.css">
-    <title>Laberinto</title>
-</head>
-<body>
+  <body>
     <div id="maze_container">
->>>>>>> 0dfb3acf80b9fd0b47e4e6d956f307d690118a31
+    <div align="center" id="maze_container">
         <div id="maze" data-steps="194">
         <div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door exit"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div>
         <div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div></div><div class="wall"></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div><div></div><div></div><div></div><div class="wall"></div><div></div><div class="wall"></div><div></div><div></div><div></div><div></div><div></div><div class="wall"></div></div>
@@ -77,15 +102,15 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
         <div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door entrance hero"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div>
         </div><div id="maze_output" style="width: 594px;"><div id="maze_score">192</div><div id="maze_message">Primero encuentra la llave</div></div>
         </div>
-<<<<<<< HEAD
 		</div>
 	</div>
-
+ <div  align="center" id="boton">
+			<button onclick="window.location.href='index2.php'" class="pushy__btn pushy__btn--md pushy__btn--blue" id="sig">Siguiente</button>	
+      <button id="perdio" class="pushy__btn pushy__btn--md pushy__btn--red" onclick="window.location.href='index.php'">Repetir</button>
+   </br>  
+			</div>
 	<?php include('../footer.php'); ?>
 	
-=======
-
->>>>>>> 0dfb3acf80b9fd0b47e4e6d956f307d690118a31
 <script src="mazing.js"></script>
 <script src="maze-builder.js"></script>
 <script>

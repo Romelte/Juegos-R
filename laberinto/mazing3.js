@@ -1,8 +1,7 @@
 // Original JavaScript code by Chirp Internet: chirpinternet.eu
 // Please acknowledge use of this code by including this header.
 var laberinto=0;
-document.getElementById('sig').disabled=true;
-document.getElementById('sig').style.display = 'none';
+
 document.getElementById('perdio').disabled=true;
 document.getElementById('perdio').style.display = 'none';
 
@@ -134,9 +133,8 @@ Mazing.prototype.tryMoveHero = function(pos) {
   if(nextStep.match(/exit/)) {
     if(this.heroHasKey) {
       this.heroWins();
-      document.getElementById('sig').disabled=false;
-      document.getElementById('sig').style.display = 'block';
-              laberinto = 1;
+      
+              laberinto = 3;
               var data_laberinto = 'laberinto=' + laberinto;
 
               $.ajax({
@@ -146,7 +144,7 @@ Mazing.prototype.tryMoveHero = function(pos) {
                 dataType:"html",
                 asycn:false,
                 success: function(){
-                  // alert("Ha sido ejecutada la acción.");
+                   //alert("Ha sido ejecutada la acción.");
                 }
 
     })
