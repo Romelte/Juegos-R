@@ -1,6 +1,7 @@
 // Original JavaScript code by Chirp Internet: chirpinternet.eu
 // Please acknowledge use of this code by including this header.
 var laberinto=0;
+var pregunta;
 document.getElementById('sig').disabled=true;
 document.getElementById('sig').style.display = 'none';
 document.getElementById('perdio').disabled=true;
@@ -86,10 +87,19 @@ Mazing.prototype.heroTakeTreasure = function() {
 
 Mazing.prototype.heroTakeKey = function() {
   this.maze[this.heroPos].classList.remove("key");
-  this.heroHasKey = true;
-  this.heroScore += 20;
-  this.mazeScore.classList.add("has-key");
-  this.setMessage("Ahora tienes la llave!");
+  if(!this.maze[this.heroPos].classList.remove("key")){
+    pregunta = prompt("¿Sabes tu donde denunciar? A.fiscalia B.policia C.colegio D.bogota", "");
+    if(pregunta == 'a'){
+      this.heroHasKey = true;
+      this.heroScore += 20;
+      this.mazeScore.classList.add("has-key");
+      this.setMessage("Ahora tienes la llave!");
+    }else{
+      alert("Respuesta Equivocada");
+      window.location.href= "index.php";
+    }
+  }
+  
 };
 
 Mazing.prototype.gameOver = function(text) {

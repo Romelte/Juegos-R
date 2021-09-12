@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="login.css">
-    <title>Login</title>
+    <title>Cambiar Contraseña</title>
 </head>
 <body>
     
@@ -16,9 +16,9 @@
         <div class="col-md-6">
 			<div id="logo-login" align="center"><img class="logo-login" src="images/logos-login.png"></div>
             <div class="card">
-                <form method="post" action="ingreso.php"  class="box">
-                    <h1>Ingresar</h1>
-                    <p class="text-muted"> Ingresa tu usuario y tu contraseña </p> <input type="text" name="correo" placeholder="Usuario"> <input type="password" name="contrasena" placeholder="Contraseña"> <a class="forgot text-muted" href="registro.php">Registrate</a></br> <a class="forgot text-muted" href="olvidar.php">Olvidaste la contraseña?</a><input type="submit" name="" value="Iniciar Sesión" >
+                <form method="post" action="cambio.php"  class="box">
+                    <h1>Cambiar Contraseña</h1>
+                    <p class="text-muted"> Ingresa tu correo y la nueva contraseña </p> <input type="text" name="correo" placeholder="Correo"> <input type="text" name="contrasena" placeholder="Nueva contraseña"> <input type="submit" name="" value="Siguiente" >
                     <!--<div class="col-md-12">
                         <ul class="social-network social-circle">
                             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>

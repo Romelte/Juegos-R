@@ -1,4 +1,4 @@
-<div style="margin-top: 40px;"><?php include('../menu.php'); ?></div>
+<div style="margin-top: 40px;"><?php include('../menu-juegos.php'); ?></div>
 
 <div style="margin:-260px 0 0 130px;">
 
