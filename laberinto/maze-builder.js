@@ -238,6 +238,7 @@ class MazeBuilder {
   
       this.maze[fr][fc] = ["key"];
   
+  
     }
   
     display(id) {
