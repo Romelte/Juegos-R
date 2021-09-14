@@ -9,7 +9,6 @@ body {
 #maze_container {
     position: relative;
     display: inline-block;
-    width: 500px;
   }
   #maze {
     position: relative;
@@ -95,7 +94,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    content: "FINALIZADO";
+    content: "PERDISTE";
     background: rgba(0,0,0,0.4);
     text-transform: uppercase;
     font-family: monospace;
